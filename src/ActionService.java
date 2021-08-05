@@ -17,10 +17,10 @@ public class ActionService {
                 result = first.getValue() / second.getValue();
                 break;
             default:
-                throw new Exception("Не правильно введен символ операции, используйте только +, -, *, /");
+                throw new Exception(" используйте только +, -, *, /");
         }
 
-        if (first.getType() == NumberType.ROMAN) {
+        if (first.getType() == RomanArabicNumber.ARABICNUMBER.ROMANNUMBER) {
             return NumberService.toRomanNumber(result);
         } else return String.valueOf(result);
     }

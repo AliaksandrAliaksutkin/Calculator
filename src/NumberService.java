@@ -20,28 +20,28 @@ import java.util.TreeMap;
     static Number parseAndValidate(String symbol) throws Exception {
 
         int value;
-        NumberType type;
+        RomanArabicNumber type;
 
         try {
             value = Integer.parseInt(symbol);
-            type = NumberType.ARABIC;
+            type = RomanArabicNumber.ARABICNUMBER;
         }catch (NumberFormatException e) {
             value = toArabicNumber(symbol);
-            type = NumberType.ROMAN;
+            type = RomanArabicNumber.ROMANNUMBER;
         }
 
         if (value < 1 || value > 10) {
-            throw new Exception("Неподходящее значение числа(ел), используйте числа от 1 до 10 включительно");
+            throw new Exception("Используйте числа от 1 до 10 включительно");
         }
 
         return new Number(value, type);
     }
 
-    static Number parseAndValidate(String symbol, NumberType type) throws Exception {
+    static Number parseAndValidate(String symbol, RomanArabicNumber type) throws Exception {
 
         Number number = parseAndValidate(symbol);
         if (number.getType() != type) {
-            throw new Exception("Числа разных типов, используйте один тип вводных значений");
+            throw new Exception("Арабские и римские цифры, используйте что-то одно");
         }
 
         return number;

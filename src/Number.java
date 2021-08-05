@@ -1,8 +1,8 @@
 class Number {
     private int value;
-    private NumberType type;
+    private RomanArabicNumber type;
 
-    Number(int value, NumberType type) {
+    Number(int value, RomanArabicNumber type) {
         this.value = value;
         this.type = type;
     }
@@ -11,7 +11,7 @@ class Number {
         return value;
     }
 
-    NumberType getType() {
+    RomanArabicNumber getType() {
         return type;
     }
 }
