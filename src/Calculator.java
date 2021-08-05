@@ -9,8 +9,8 @@ public class Calculator {
             String line = scanner.nextLine();
 
             try {
-                String[] symbols = line.split(" ");
-                if (symbols.length != 3) throw new Exception("Что-то пошло не так, попробуйте еще раз");
+                String[] symbols = line.trim().split(" "); // делим строки на подстроки, разделитель пробел и отрезаем пробелы вначале и конце
+                if (symbols.length != 3) throw new Exception("Что-то пошло не так, попробуйте еще раз"); // не более 3х подстрок
 
                 Number firstNumber = NumberService.parseAndValidate(symbols[0]);
                 Number secondNumber = NumberService.parseAndValidate(symbols[2], firstNumber.getType());

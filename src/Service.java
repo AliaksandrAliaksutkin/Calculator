@@ -25,8 +25,4 @@ public class Service {
         } else return String.valueOf(result);
     }
 
-
-
-
-
 }
