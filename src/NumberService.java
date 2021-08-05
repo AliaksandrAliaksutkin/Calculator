@@ -14,6 +14,7 @@ import java.util.TreeMap;
         romanString.put(50, "L");
         romanString.put(90, "XC");
         romanString.put(100, "C");
+        romanString.put(3,"III");
     }
 
     static Number parseAndValidate(String symbol) throws Exception {
@@ -74,7 +75,7 @@ import java.util.TreeMap;
             char letter = roman.charAt(i);
             int num = letterToNumber(letter);
 
-            if (num < 0) throw new Exception("Неверный римский символ");
+            if (num < 0 ) throw new Exception("Неверный римский символ");
 
             i++;
             if (i == roman.length()) {
