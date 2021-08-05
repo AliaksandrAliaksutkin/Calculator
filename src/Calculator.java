@@ -14,7 +14,7 @@ public class Calculator {
 
                 Number firstNumber = NumberService.parseAndValidate(symbols[0]);
                 Number secondNumber = NumberService.parseAndValidate(symbols[2], firstNumber.getType());
-                String result = ActionService.calculate(firstNumber, secondNumber, symbols[1]);
+                String result = Service.calculate(firstNumber, secondNumber, symbols[1]);
                 System.out.println("Результат: \n" + result);
 
             } catch (Exception e) {
